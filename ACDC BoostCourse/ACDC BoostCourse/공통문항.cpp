@@ -1,29 +1,31 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main() {
-	string word;
-	int numcnt[26]={0};
-	int max = 0;
-	int cnt = 0;
-	int result;
-	cin >> word;
-	for (int i = 0; i < word.length(); i++) {
-		if (word[i] >= 65) numcnt[word[i] - 'a']++;
-		else  if (word[i] >= 97) numcnt[word[i] - 'A']++;
-		
-	}
-	for (int i = 0; i < word.length(); i++) {
-		if (numcnt[i] > max) {
-			max = numcnt[i];
-			result = i;
+	int num;
+	
+	int score = 1;
+	char result[80];
+	int (* total_score)[5];
+	total_score = &sum;
+	cin >> num;
+
+	
+
+	for (int j = 0; j < num; j++) {
+		cin >> result;
+		for (int i = 0; i < 80; i++) {
+			if (result[i] == 'O') {
+				sum +=score;
+				score++;
+			}
+			else {
+				score = 1;
+			}
 		}
 	}
-	for(int i=0;i<word.length();i++){
-		if (max == numcnt[i]) cnt++;
+	for (int j = 0; j < num; j++) {
+		cout << total_score << endl;
 	}
-
-	if (cnt > 1) cout << "?" << endl;
-	else cout << (char)(result + 65) << endl;
-	
 }
