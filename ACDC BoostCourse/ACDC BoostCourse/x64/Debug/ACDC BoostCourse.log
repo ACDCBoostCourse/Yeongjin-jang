@@ -1,3 +1,2 @@
-﻿  66강.cpp
-C:\Users\장영진\Desktop\ACDC BoostCourse\Yeongjin-jang\ACDC BoostCourse\ACDC BoostCourse\Section 2_Memory\week4\66강.cpp(12,1): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\장영진\Desktop\ACDC BoostCourse\Yeongjin-jang\ACDC BoostCourse\ACDC BoostCourse\Section 2_Memory\week4\66강.cpp(14,3): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+﻿  2.cpp
+C:\Users\장영진\Desktop\ACDC BoostCourse\Yeongjin-jang\ACDC BoostCourse\ACDC BoostCourse\Section 2_Memory\week5\2.cpp(40,11): error C3863: 배열 형식 'int [4]'은(는) 할당할 수 없습니다.
