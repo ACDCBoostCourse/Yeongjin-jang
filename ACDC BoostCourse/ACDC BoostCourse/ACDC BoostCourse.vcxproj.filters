@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Section 2_Memory\week5\2.cpp">
+    <ClCompile Include="Algortihm\week6\군형잡힌 세상.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
