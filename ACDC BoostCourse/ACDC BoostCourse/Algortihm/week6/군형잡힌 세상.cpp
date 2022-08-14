@@ -1,49 +1,71 @@
 #include <iostream>
-#include <stack>
-#include <string>
 using namespace std;
 
-int main() {
-	
-	while (1) {
-		string text;
-		getline(cin, text);
-		if (text == ".") break;
-		stack<char>Text;
-		for (int i = 0; i < text.length(); i++) {
-			
-			
-			if (text[i] == '[') {
-				if (text[i] == ']') {
-					Text.pop();
-				}
-				else if (text[i] == ')') {
-					Text.push(1);
-				}
-			}
-			if (text == "(") {
-				if (text == ")") {
-					Text.pop();
-				}
-				else if (text == "]") {
-					Text.push(2);
-				}
-			}
-		}
-		if (Text.empty()) {
-			cout << "yes";
-		}
-		else {
-			cout << "no";
-		}
+template <typename T>
 
-		if (text == "\n") {
-			break;
-		}
+class queue {
+private:
+	T* arr;
+	int s_size;
+	int topCursor;
+public:
+	stack() {
+		s_size = 0;
+		arr = new T[10000];
+		topCursor = 0;
 	}
 	
-	
+	void push(T elem) {
+		arr[topCursor] = elem;
+		topCursor++;
+	}
+	void pop(T elem) {
+		if (s_size != 0) {
+			arr[topCursor - 1] = 0;
+			topCursor--;
+		}
+		else {
+			cout << "-1" << endl;
+		}
+	}
+	T top() {
+		return arr[topCursor - 1];
+	}
+	void front() {
+		if (s_size != 0) {
+			cout << arr[0] << endl;
+		}
+		else
+			cout << "-1" << endl;
+	}
+	void back() {
+		if (s_size != 0) {
+			cout << arr[topCursor - 1] << endl;
+		}
+		else {
+			cout << "-1" << endl;
+		}
+	}
 
-	
+	bool empty() {
+		if (s_size == 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+		
+		int size() {
+			return s_size;
+		}
+	}
+};
 
-}
+	int main() {
+		int n;
+		string commend;
+		for (int i = 0; i < n; i++) {
+			cin >> commend;
+		}
+
+	}

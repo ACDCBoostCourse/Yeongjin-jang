@@ -1,0 +1,29 @@
+const int val
+-val의 데이터 형이 (const int)형이므로 값을 수정할 수 없다
+
+const int* val
+-val은 (const int)형의 포인터 값이다
+-val의 값은 수정 가능하다
+-val이 가리키는 데이터는 (const int)형이므로 수정 불가능
+
+int* const val
+-val의 데이터 형은 int*형이고, const 키워드로 인해 수정 불가능하다
+-val이 가리키는 데이터는 (int)형이므로 값을 수정할 수 있다
+
+const int* const val 
+-val의 값이나 val이 가리키는 데이터나 둘 다 수정 불가능
+
+
+
+
+const int func ( int a) {}
+-반환값 수정 불가능
+-내용 중에 멤버 변수 값을 바꾸는 것이 없더라도, const 처리하지 않으면 const형 오브젝트에서 부를 수 없다.
+
+int func (const int a) {}
+-변수 값 수정 불가능
+-const 처리된 멤버 함수 안에서 역시 자신의 멤버 함수를 부르는 데 제한이 생김
+
+int func (int a) const {}
+-멤버 변수의 값을 수정 불가능
+-const형 오브젝트에서 해당 함수들을 부를 수 있기 때문에 필요
