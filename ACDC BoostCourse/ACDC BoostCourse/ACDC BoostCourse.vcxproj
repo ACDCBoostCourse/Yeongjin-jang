@@ -19,7 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Algortihm\week7\큐.cpp" />
+    <ClCompile Include="Section 3_OOP\Week8\components.cpp" />
+    <ClCompile Include="Section 3_OOP\Week8\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Section 3_OOP\Week8\components.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
