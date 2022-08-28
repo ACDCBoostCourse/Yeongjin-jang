@@ -1,14 +1,1 @@
-﻿  components.cpp
-C:\Users\장영진\Desktop\ACDC BoostCourse\Yeongjin-jang\ACDC BoostCourse\ACDC BoostCourse\Section 3_OOP\Week8\components.cpp(16,7): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
-C:\Users\장영진\Desktop\ACDC BoostCourse\Yeongjin-jang\ACDC BoostCourse\ACDC BoostCourse\Section 3_OOP\Week8\components.cpp(21,7): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
-C:\Users\장영진\Desktop\ACDC BoostCourse\Yeongjin-jang\ACDC BoostCourse\ACDC BoostCourse\Section 3_OOP\Week8\components.cpp(26,7): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
-C:\Users\장영진\Desktop\ACDC BoostCourse\Yeongjin-jang\ACDC BoostCourse\ACDC BoostCourse\Section 3_OOP\Week8\components.cpp(31,7): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
-C:\Users\장영진\Desktop\ACDC BoostCourse\Yeongjin-jang\ACDC BoostCourse\ACDC BoostCourse\Section 3_OOP\Week8\components.cpp(63,7): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
-C:\Users\장영진\Desktop\ACDC BoostCourse\Yeongjin-jang\ACDC BoostCourse\ACDC BoostCourse\Section 3_OOP\Week8\components.cpp(85,7): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
-  main.cpp
-  코드를 생성하고 있습니다...
-C:\Users\장영진\Desktop\ACDC BoostCourse\Yeongjin-jang\ACDC BoostCourse\ACDC BoostCourse\Section 3_OOP\Week8\components.cpp(81): warning C4715: 'Item::operator+': 모든 제어 경로에서 값을 반환하지는 않습니다.
-components.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: virtual void __cdecl Username::attack(void)" (?attack@Username@@UEAAXXZ)
-components.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: virtual void __cdecl Username::combinate(void)" (?combinate@Username@@UEAAXXZ)
-components.obj : error LNK2001: 확인할 수 없는 외부 기호 "private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > Item::Name" (?Name@Item@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A)
-C:\Users\장영진\Desktop\ACDC BoostCourse\Yeongjin-jang\ACDC BoostCourse\x64\Debug\ACDC BoostCourse.exe : fatal error LNK1120: 3개의 확인할 수 없는 외부 참조입니다.
+﻿  ACDC BoostCourse.vcxproj -> C:\Users\장영진\Desktop\ACDC BoostCourse\Yeongjin-jang\ACDC BoostCourse\x64\Debug\ACDC BoostCourse.exe

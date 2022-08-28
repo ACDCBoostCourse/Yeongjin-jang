@@ -1,4 +1,8 @@
 #include "components.h"
+#include <iostream>
+#include <string>
+using  namespace std;
+
 int main() {
 	//1
 	Warrior warrior("warrior", 1, 100, 10);
@@ -21,16 +25,18 @@ int main() {
 	archer.attack();
 	archer.defend();
 	//5
-	sword1 + sword2;
-	sword1.GetPerformance();
+	Item combinatedItem1=warrior.combinate(sword1, sword2);
+	cout <<combinatedItem1.GetPerformance() << endl;
+	
 	//6
 	manager.openBurningEvent();
 	//7
-	staff1 + staff2;
-	staff1.GetPerformance();
+    Item combinatedItem2=magician.combinate(staff1, staff2);
+	cout<<combinatedItem2.GetPerformance()<<endl;
 	//8
 	manager.closeBurningEvent();
 	//9
-	bow1 + bow2;
-	bow1.GetPerformance();
+	Item combinatedItem3=archer.combinate(bow1, bow2);
+	cout<<combinatedItem3.GetPerformance()<<endl;
 }
+

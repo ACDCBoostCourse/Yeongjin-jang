@@ -1,5 +1,4 @@
 //선언부
-
 #ifndef  COMPONENTS_H
 #define COMPONENTS_H
 #include <iostream>
@@ -7,74 +6,77 @@
 #include <cstdlib>
 using namespace std;
 
+class Username;
+class Warrior;
+class Magician;
+class Archer;
+class Item;
+class Manager;
+
 //유저
 class Username {
 private:
-	
-	int money;
 	static bool isBurning;
 	friend class Manager;
 	friend class Item;
-	
 protected:
-	string const name;
+	string name;
 	int level;
-	static int luck;
+	int money;
+	int luck;
 public:
 	Username();
 	Username(string name, int level, int money, int luck);
-	virtual void attack();
+	void attack();
 	void defend();
-	virtual void combinate();
+	void combinate();
 	Item combinate(Item a, Item b);
 };
 
-class Warrior :Username {
+class Warrior :public Username {
 public:
-	Warrior();
-	Warrior(string Name, int Level, int money, int Luck);
+	//Warrior();
+	Warrior(const string name, int level, int money, int luck);
 	void attack();
 	void defend();
 };
-class Magician : Username {
+class Magician :public Username {
 public:
-	Magician();
-	Magician(string Name, int Level, int money, int Luck);
+	//Magician();
+	Magician(const string name, int level, int money, int luck);
 	void attack();
 	void defend();
 };
-class Archer : Username {
+class Archer :public Username {
 public:
-	Archer();
-	Archer(string Name, int Level, int money, int Luck);
+	//Archer();
+	Archer(const string name, int level, int money, int luck);
 	void attack();
 	void defend();
 };
 
 //아이템
 class Item {
-protected:
-	string const name;
-	int  performance;
-private	:
-	static string Name;
-	int Performance;
+private:
 	friend class Manager;
-	friend class User;
+	friend class Username;
+	const string name;
+	const int  performance;
 public:
-	Item(string Name, int  Performance);
+	Item(string name, int  performance);
 	static int SuccessPercentage;
 	int GetPerformance();
-	Item & operator+ (Item b);
+	friend Item operator+ (Item a,Item b);
 };
 
 //Manager
 class Manager {
-	string  name;
+	const string  name;
 public:
 	Manager(string  name);
 	void openBurningEvent();
 	void closeBurningEvent();
 };
 
-#endif 
+Item operator +(Item a, Item b);
+#endif

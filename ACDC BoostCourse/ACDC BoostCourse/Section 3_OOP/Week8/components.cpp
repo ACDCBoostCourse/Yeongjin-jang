@@ -1,101 +1,96 @@
 //구현부
 #include <iostream>
-#include "components.h"	
+#include "components.h"
 using namespace std;
 
 bool Username::isBurning = false;
-//string  Username::name;
-int Username::luck;
+////string  Username::name;
+//int Username::luck;
 
 //string Item::
 int Item::SuccessPercentage;
 
 
 //Username(Warrior, Magician, Archer)
-Username::Username(){
-	name == "";
-	level = 0;
-	luck = 0;
-}
-Warrior::Warrior(string Name, int Level, int money, int Luck) {
-	name == Name;
-	level = Level;
-	luck = Luck;
-}
-Magician::Magician(string Name, int Level, int money, int Luck) {
-	name == Name;
-	level = Level;
-	luck = Luck;
-}
-Archer::Archer(string Name, int Level, int money, int Luck) {
-	name == Name;
-	level = Level;
-	luck = Luck;
-}
+Username::Username(const string name, int level, int money, int luck) :name(name), level(level), money(money), luck(luck) {}; 
+Warrior::Warrior(string name, int level, int money, int luck) :Username(name, level, money, luck) {};
+Magician::Magician(string name, int level, int money, int luck) :Username(name, level, money, luck) {};
+Archer::Archer(string name, int level, int money, int luck) :Username(name, level, money, luck) {};
 
+//방어
 void Username::defend() {
-	cout << "(" << Username::name << ") : 방어" << endl;
+    cout << "(" << Username::name << ") : 방어" << endl;
 }
 void Warrior::defend() {
-	cout << "(" << Username::name << ") : 방어" << endl;
+    cout << "(" << Username::name << ") : 방어" << endl;
 }
 void Magician::defend() {
-	cout << "(" << Username::name << ") : 방어" << endl;
+    cout << "(" << Username::name << ") : 방어" << endl;
 }
 void Archer::defend() {
-	cout << "(" << Username::name << ") : 방어" << endl;
+    cout << "(" << Username::name << ") : 방어" << endl;
 }
+
 Item Username::combinate(Item a, Item b) {
-	return a + b;
+    //확률 계산
+    Item::SuccessPercentage = 50 + Username::luck;
+    if (isBurning) {
+        if (Item::SuccessPercentage <= 90) {
+            Item::SuccessPercentage += 10;
+        }
+        else if (Item::SuccessPercentage > 90) {
+            Item::SuccessPercentage = 100;
+        }
+    }
+    else {
+        Item::SuccessPercentage = 50 + Username::luck;
+    }
+    //조합
+    srand(time(NULL));
+    if (rand() % 100 >= Item::SuccessPercentage) {
+        cout << "조합 성공!" << endl;
+        return a + b;
+    }
+    else if (rand() % 100 < Item::SuccessPercentage) {
+        cout << "조합 실패!" << endl;
+        Item failedItem = Item("조합 실패 아이템", 0);
+        return  failedItem;
+    }
+    else  {
+        cout << "조합 실패!" << endl;
+        Item failedItem = Item("조합 실패 아이템", 0);
+        return  failedItem;
+    }
+
 }
+
 void Warrior::attack() {
-	cout << "(" << Username::name << ") : 검 휘두르기" << endl;
+    cout << "(" << Username::name << ") : 검 휘두르기" << endl;
 }
 void Magician::attack() {
-	cout << "(" << Username::name << ") : 마법 쓰기" << endl;
+    cout << "(" << Username::name << ") : 마법 쓰기" << endl;
 }
 void Archer::attack() {
-	cout << "(" << Username::name << ") : 활 쏘기" << endl;
+    cout << "(" << Username::name << ") : 활 쏘기" << endl;
 }
 
 //Item
-Item::Item(string Name, int Performance) {
-	name == Name;
-	performance = Performance;
-}
+Item::Item(string name, int performance) :name(name), performance(performance) {};
 int  Item::GetPerformance() {
-	return performance;
+    return performance;
 }
- Item & Item::operator+ (Item b) {
-	if (rand() % 100 >= SuccessPercentage) {
-		cout << "조합 성공!" << endl;
-		performance += b.performance;
-		return *this;
-	}
-	else if (rand() % 100 < SuccessPercentage) {
-		cout << "조합 실패!" << endl;
-		Performance = 0;
-		Name = "조합 실패 아이템";
-		return *this;
-	}
+Item operator+ (Item a,Item b) {
+    int combinatedperformance = a.performance+b.performance;
+    Item combinatedItem =Item("조합 성공 아이템",combinatedperformance);
+    return combinatedItem;
 }
 
 //Manager
-Manager::Manager(string Name) {
-	name == Name;
-}
+Manager::Manager(string name) :name(name) {};
 void Manager::openBurningEvent() {
-	Username::isBurning = true;
-	Item::SuccessPercentage = 50 + Username::luck;
-	if (Item::SuccessPercentage <= 90) {
-		Item::SuccessPercentage += 10;
-	}
-	else if (Item::SuccessPercentage > 90) {
-		Item::SuccessPercentage = 100;
-	}
-	cout << "버닝 이벤트 적용" << endl;
+    Username::isBurning = true;
+    cout << "버닝 이벤트 적용" << endl;
 };
 void Manager::closeBurningEvent() {
-	Username::isBurning = false;
-	Item::SuccessPercentage = 50 + Username::luck;
+    Username::isBurning = false;
 };
